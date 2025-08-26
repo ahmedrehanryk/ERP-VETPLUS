@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { makeCrud } from '../crud.js';
+const r = Router();
+const crud = makeCrud('vendors');
+r.get('/', crud.list);
+r.get('/:id', crud.get);
+r.post('/', crud.create);
+r.put('/:id', crud.update);
+r.delete('/:id', crud.remove);
+export default r;
